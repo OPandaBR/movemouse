@@ -61,7 +61,7 @@ namespace ellabi.Views
             if (_vm.SettingsVm.Settings.StartAtLaunch)
             {
                 _vm.Start();
-                _vm.ShowNotification("Automatically started at launch.");
+                _vm.ShowNotification("Iniciado automaticamente ao abrir.");
             }
             else if (_vm.SettingsVm.Settings.MinimiseOnStop)
             {
@@ -391,8 +391,7 @@ namespace ellabi.Views
                     {
                         StartInstantAnimation(ref FlyingMinimiseButton, 1);
                         StartInstantAnimation(ref FlyingSettingsButton, 2);
-                        StartInstantAnimation(ref FlyingPayPalButton, 3);
-                        StartInstantAnimation(ref FlyingTwitterButton, 4);   
+                        // Build personalizado: botoes PayPal (3) e Twitter (4) removidos.
                         StartInstantAnimation(ref FlyingHelpButton, 5);
                         StartInstantAnimation(ref FlyingCloseButton, 6);
                     }
@@ -400,8 +399,7 @@ namespace ellabi.Views
                     {
                         StartFlyingAnimation(ref FlyingMinimiseButton, 1);
                         StartFlyingAnimation(ref FlyingSettingsButton, 2);
-                        StartFlyingAnimation(ref FlyingPayPalButton, 3);
-                        StartFlyingAnimation(ref FlyingTwitterButton, 4);      
+                        // Build personalizado: botoes PayPal (3) e Twitter (4) removidos.
                         StartFlyingAnimation(ref FlyingHelpButton, 5);
                         StartFlyingAnimation(ref FlyingCloseButton, 6);
                     }
@@ -517,9 +515,7 @@ namespace ellabi.Views
                     if (_hideButtons)
                     {
                         StartFadeOutAnimation(FlyingSettingsButton);
-                        StartFadeOutAnimation(FlyingPayPalButton);
                         StartFadeOutAnimation(FlyingHelpButton);
-                        StartFadeOutAnimation(FlyingTwitterButton);
                         StartFadeOutAnimation(FlyingMinimiseButton);
                         StartFadeOutAnimation(FlyingCloseButton);
                         _buttonsOnShow = false;

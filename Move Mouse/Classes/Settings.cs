@@ -58,7 +58,8 @@ namespace ellabi.Classes
         {
             get
             {
-                if (_lowerInterval == null) _lowerInterval = 30;
+                // Padrao personalizado: 60s (mantem a sessao ativa sem exagero).
+                if (_lowerInterval == null) _lowerInterval = 60;
                 return _lowerInterval.Value;
             }
             set
@@ -110,7 +111,8 @@ namespace ellabi.Classes
         {
             get
             {
-                if (_autoPause == null) _autoPause = false;
+                // Padrao personalizado: pausa automaticamente quando voce usa o PC.
+                if (_autoPause == null) _autoPause = true;
                 return _autoPause.Value;
             }
             set
@@ -124,7 +126,8 @@ namespace ellabi.Classes
         {
             get
             {
-                if (_autoResume == null) _autoResume = false;
+                // Padrao personalizado: retoma sozinho apos periodo de inatividade.
+                if (_autoResume == null) _autoResume = true;
                 return _autoResume.Value;
             }
             set
@@ -138,7 +141,7 @@ namespace ellabi.Classes
         {
             get
             {
-                if (_autoResumeSeconds == null) _autoResumeSeconds = 30;
+                if (_autoResumeSeconds == null) _autoResumeSeconds = 60;
                 return _autoResumeSeconds.Value;
             }
             set
@@ -272,7 +275,8 @@ namespace ellabi.Classes
         {
             get
             {
-                if (_launchAtLogon == null) _launchAtLogon = false;
+                // Padrao personalizado: inicia junto com o Windows.
+                if (_launchAtLogon == null) _launchAtLogon = true;
                 return _launchAtLogon.Value;
             }
             set
@@ -286,7 +290,8 @@ namespace ellabi.Classes
         {
             get
             {
-                if (_startAtLaunch == null) _startAtLaunch = false;
+                // Padrao personalizado: ja comeca a trabalhar assim que abre.
+                if (_startAtLaunch == null) _startAtLaunch = true;
                 return _startAtLaunch.Value;
             }
             set
@@ -428,7 +433,8 @@ namespace ellabi.Classes
         {
             get
             {
-                if (_minimiseOnStop == null) _minimiseOnStop = false;
+                // Padrao personalizado: minimiza para a bandeja quando parado.
+                if (_minimiseOnStop == null) _minimiseOnStop = true;
                 return _minimiseOnStop.Value;
             }
             set

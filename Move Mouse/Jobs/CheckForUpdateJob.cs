@@ -35,6 +35,9 @@ namespace ellabi.Jobs
         {
             try
             {
+                // Build personalizado: sem URL de atualizacao configurada, nao faz nenhuma chamada de rede.
+                if (String.IsNullOrWhiteSpace(StaticCode.UpdateXmlUrl)) return null;
+
                 var xmlDoc = new XmlDocument();
                 xmlDoc.Load(StaticCode.UpdateXmlUrl);
                 var versionNode = xmlDoc.SelectSingleNode("Update/LatestVersion");

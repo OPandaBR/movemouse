@@ -251,8 +251,8 @@ namespace ellabi.Views
             {
                 var ofd = new OpenFileDialog
                 {
-                    Title = "Open PowerShell Script",
-                    Filter = "PowerShell Script (*.ps1)|*.ps1"
+                    Title = "Abrir script PowerShell",
+                    Filter = "Script PowerShell (*.ps1)|*.ps1"
                 };
                 var result = ofd.ShowDialog();
 
@@ -316,7 +316,7 @@ namespace ellabi.Views
 
             try
             {
-                var result = MessageBox.Show("If you are having issues with Move Mouse or have any questions, you may find the Troubleshooting section in the Wiki useful.\r\n\r\nWould you like to visit the Wiki now?", "Visit Troubleshooting Page", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                var result = MessageBox.Show("Se voce tiver problemas com o Move Mouse ou duvidas, a secao de Solucao de Problemas no Wiki pode ajudar.\r\n\r\nDeseja abrir o Wiki agora?", "Abrir pagina de solucao de problemas", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {

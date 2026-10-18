@@ -25,18 +25,20 @@ namespace ellabi
         public static event UpdateAvailablityChangedHandler UpdateAvailablityChanged;
         public static event RefreshSchedulesHandler RefreshSchedules;
 
-        public const string PayPalUrl = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZTWHD9CRW5XN";
-        public const string HomePageUrl = "http://www.movemouse.co.uk";
-        public const string HelpPageUrl = "https://github.com/sw3103/movemouse/wiki";
-        public const string TwitterUrl = "https://twitter.com/movemouse";
-        public const string GitHubUrl = "https://github.com/sw3103/movemouse";
+        // Build personalizado: links de doacao/telemetria do autor original removidos e repontados para o fork.
+        public const string PayPalUrl = "";
+        public const string HomePageUrl = "https://github.com/OPandaBR/movemouse";
+        public const string HelpPageUrl = "https://github.com/OPandaBR/movemouse/wiki";
+        public const string TwitterUrl = "";
+        public const string GitHubUrl = "https://github.com/OPandaBR/movemouse";
         public const string CronHelpUrl = "http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html";
-        public const string TroubleshootingUrl = "https://github.com/sw3103/movemouse/wiki/Troubleshooting";
+        public const string TroubleshootingUrl = "https://github.com/OPandaBR/movemouse/wiki/Troubleshooting";
         //public const string CronHelpUrl = "https://crontab.guru/examples.html";
         //public const string ThemesXmlUrl = "https://raw.githubusercontent.com/sw3103/movemouse/master/Themes/Themes.xml";
         //public const string ThemesXmlUrl = "C:\\Users\\steve\\source\\repos\\movemouse\\Themes\\Themes_Test.xml";
         //public const string ThemesXmlUrl = "https://raw.githubusercontent.com/sw3103/movemouse/master/Themes/Themes_Test.xml";
-        public const string UpdateXmlUrl = "https://raw.githubusercontent.com/sw3103/movemouse/master/Update_4x.xml";
+        // Verificacao de atualizacao desativada neste build (sem chamada de rede ao repo do autor).
+        public const string UpdateXmlUrl = "";
         public const string MailAddress = "contact@movemouse.co.uk";
         public const string RunRegistryValueName = "Move Mouse";
 

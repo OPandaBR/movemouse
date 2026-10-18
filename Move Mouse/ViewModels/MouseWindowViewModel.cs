@@ -195,7 +195,7 @@ namespace ellabi.ViewModels
 
                         if ((CurrentState.Equals(MouseState.Locked) || CurrentState.Equals(MouseState.Running)) && !SettingsVm.Settings.ActiveWhenLocked)
                         {
-                            ShowNotification("Automatically resuming now workstation has been unlocked.");
+                            ShowNotification("Retomando automaticamente agora que a estacao foi desbloqueada.");
                         }
 
                         break;
@@ -222,12 +222,12 @@ namespace ellabi.ViewModels
                     if (CurrentState.Equals(MouseState.Running) && RunningOnBattery())
                     {
                         Stop(MouseState.OnBattery);
-                        ShowNotification("Pausing now running on battery.");
+                        ShowNotification("Pausando: agora funcionando na bateria.");
                     }
                     else if (CurrentState.Equals(MouseState.OnBattery) && !RunningOnBattery())
                     {
                         Start();
-                        ShowNotification("Resuming now running on mains power.");
+                        ShowNotification("Retomando: agora na energia eletrica.");
                     }
                 }
             }
@@ -262,11 +262,11 @@ namespace ellabi.ViewModels
                 {
                     case ScheduleBase.ScheduleAction.Start:
                         Start();
-                        ShowNotification("Scheduled start.");
+                        ShowNotification("Inicio agendado.");
                         break;
                     case ScheduleBase.ScheduleAction.Stop:
                         Stop(MouseState.Idle);
-                        ShowNotification("Scheduled stop.");
+                        ShowNotification("Parada agendada.");
                         break;
                 }
             }
@@ -425,13 +425,13 @@ namespace ellabi.ViewModels
                             if (!SettingsVm.Settings.PauseOnBattery && CurrentState.Equals(MouseState.OnBattery))
                             {
                                 Start();
-                                ShowNotification("Resuming now running on mains power.");
+                                ShowNotification("Retomando: agora na energia eletrica.");
                             }
                             //todo Check what happens if state is Executing
                             else if (SettingsVm.Settings.PauseOnBattery && CurrentState.Equals(MouseState.Running) && RunningOnBattery())
                             {
                                 Stop(MouseState.OnBattery);
-                                ShowNotification("Pausing now running on battery.");
+                                ShowNotification("Pausando: agora funcionando na bateria.");
                             }
 
                             break;
@@ -728,7 +728,7 @@ namespace ellabi.ViewModels
                                 else
                                 {
                                     Stop(MouseState.Idle);
-                                    ShowNotification("Automatically stopping as there are no actions that are configured to repeat forever at each interval.");
+                                    ShowNotification("Parando automaticamente: nao ha acoes configuradas para repetir sempre a cada intervalo.");
                                 }
                             }
 
@@ -877,7 +877,7 @@ namespace ellabi.ViewModels
                 {
                     Start();
                     //GetActiveWindow();
-                    ShowNotification($"Automatically resuming after {SettingsVm.Settings.AutoResumeSeconds} seconds of inactivity.");
+                    ShowNotification($"Retomando automaticamente apos {SettingsVm.Settings.AutoResumeSeconds} segundos de inatividade.");
                 }
             }
             catch (Exception ex)
@@ -893,7 +893,7 @@ namespace ellabi.ViewModels
             try
             {
                 StopBlackoutTimer();
-                ShowNotification("Going to sleep whilst blackout in effect.");
+                ShowNotification("Entrando em espera durante o periodo de bloqueio.");
 
                 if (_blackoutTimer == null)
                 {
@@ -935,7 +935,7 @@ namespace ellabi.ViewModels
                 if (!BlackoutIsActive())
                 {
                     Start();
-                    ShowNotification("Resuming now blackout has expired.");
+                    ShowNotification("Retomando: o periodo de bloqueio terminou.");
                 }
             }
             catch (Exception ex)

@@ -194,6 +194,7 @@
     <Compile Include="Classes\Update.cs" />
     <Compile Include="Converters\CursorDirectionToStealthModeBoolConverter.cs" />
     <Compile Include="Converters\MouseStateIsSleepingConverter.cs" />
+    <Compile Include="Converters\MouseStateToDisplayConverter.cs" />
     <Compile Include="Converters\StartupTaskStateToBoolConverter.cs" />
     <Compile Include="Converters\StringToFileExistsConverter.cs" />
     <Compile Include="Converters\VirtualKeyToDescriptionConverter.cs" />

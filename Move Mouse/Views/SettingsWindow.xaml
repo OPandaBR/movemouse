@@ -12,7 +12,7 @@
         xmlns:classes="clr-namespace:ellabi.Classes"
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
         mc:Ignorable="d"
-        Title="Move Mouse Settings" Height="482" Width="700" Icon="/Resources/Mouse.ico" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None" MouseDown="SettingsWindow_OnMouseDown" ShowActivated="True" Loaded="SettingsWindow_OnLoaded">
+        Title="Configurações do Move Mouse" Height="482" Width="700" Icon="/Resources/Mouse.ico" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None" MouseDown="SettingsWindow_OnMouseDown" ShowActivated="True" Loaded="SettingsWindow_OnLoaded">
     <Grid Background="{StaticResource StandardWindowBackground}">
         <Grid.Resources>
             <converters:DoubleDividedByTwoConverter x:Key="DoubleDividedByTwoConverter"/>
@@ -418,7 +418,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Actions" Style="{StaticResource TabHeaderTextBlockStyle}"/>
+                        <TextBlock Text="Ações" Style="{StaticResource TabHeaderTextBlockStyle}"/>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid>
@@ -465,47 +465,47 @@
                                     </Button.Style>
                                     <Button.ContextMenu>
                                         <ContextMenu StaysOpen="True" Style="{StaticResource ContextMenuStyle}">
-                                            <MenuItem Header="Move Mouse Cursor" Click="AddMoveMouseCursorAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Mover Cursor do Mouse" Click="AddMoveMouseCursorAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/MoveMouseCursorAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Click Mouse Button" Click="AddClickMouseAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Clicar Botão do Mouse" Click="AddClickMouseAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/ClickMouseAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Scroll Mouse Wheel" Click="AddScrollMouseAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Rolar Roda do Mouse" Click="AddScrollMouseAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/ScrollMouseWheelAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Position Mouse Cursor" Click="AddPositionMouseCursorAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Posicionar Cursor do Mouse" Click="AddPositionMouseCursorAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/PositionMouseCursorAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Send Keystrokes" Click="AddKeystrokeAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Enviar Teclas" Click="AddKeystrokeAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/KeystrokeAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Activate Application" Click="ActivateApplicationAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Ativar Aplicativo" Click="ActivateApplicationAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/ActivateWindowAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Run Command" Click="AddCommandAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Executar Comando" Click="AddCommandAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/CommandAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="PowerShell Script" Click="AddScriptAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Script PowerShell" Click="AddScriptAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/ScriptAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Sleep" Click="AddSleepAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                            <MenuItem Header="Dormir" Click="AddSleepAction_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                                 <MenuItem.Icon>
                                                     <Image Source="/Resources/SleepAction_Light_128x128.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                                 </MenuItem.Icon>
@@ -596,8 +596,8 @@
                                         <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                         <RowDefinition Height="10"/>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Name" Style="{StaticResource LabelTextBlockStyle}"/>
-                                    <xctk:WatermarkTextBox AutomationProperties.Name="Optional action name" Grid.Column="1" Grid.Row="0" Text="{Binding Path=Name, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Watermark="Optional"/>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Nome" Style="{StaticResource LabelTextBlockStyle}"/>
+                                    <xctk:WatermarkTextBox AutomationProperties.Name="Optional action name" Grid.Column="1" Grid.Row="0" Text="{Binding Path=Name, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Watermark="Opcional"/>
                                 </Grid>
                                 <Grid x:Key="DistanceGrid" x:Shared="False">
                                     <StackPanel Orientation="Vertical">
@@ -612,7 +612,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Random" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Aleatório" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <toggleSwitch:HorizontalToggleSwitch Grid.Column="1" Grid.Row="0" IsChecked="{Binding Path=Random, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                             <TextBlock Grid.Column="0" Grid.Row="2">
                                                 <TextBlock.Style>
@@ -658,7 +658,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Upper" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Máx." Style="{StaticResource LabelTextBlockStyle}"/>
                                             <xctk:IntegerUpDown Grid.Column="1" Grid.Row="0" Value="{Binding Path=UpperDistance, NotifyOnTargetUpdated=True}" Increment="1" Minimum="1" Maximum="9999">
                                                 <xctk:IntegerUpDown.Style>
                                                     <Style TargetType="xctk:IntegerUpDown" BasedOn="{StaticResource {x:Type xctk:IntegerUpDown}}">
@@ -683,7 +683,7 @@
                                         <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                         <RowDefinition Height="10"/>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Wait" Style="{StaticResource LabelTextBlockStyle}"/>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Aguardar" Style="{StaticResource LabelTextBlockStyle}"/>
                                     <Grid Grid.Column="1" Grid.Row="0">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
@@ -691,7 +691,7 @@
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
                                         <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=WaitForExit, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                        <Image Grid.Column="2" Source="/Resources/Warning_128x128.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Long running processes may cause Move Mouse&#xD;&#xA;to hang if Wait is enabled.">
+                                        <Image Grid.Column="2" Source="/Resources/Warning_128x128.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Processos longos podem travar o Move Mouse&#xD;&#xA;se a opção Aguardar estiver ativada.">
                                             <Image.Style>
                                                 <Style TargetType="Image">
                                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -714,7 +714,7 @@
                                         <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                         <RowDefinition Height="10"/>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Hidden" Style="{StaticResource LabelTextBlockStyle}"/>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Oculto" Style="{StaticResource LabelTextBlockStyle}"/>
                                     <toggleSwitch:HorizontalToggleSwitch Grid.Column="1" Grid.Row="0" IsChecked="{Binding Path=Hidden, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                 </Grid>
                                 <Grid x:Key="TriggerGrid" x:Shared="False">
@@ -726,7 +726,7 @@
                                         <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                         <RowDefinition Height="10"/>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Trigger" Style="{StaticResource LabelTextBlockStyle}"/>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Gatilho" Style="{StaticResource LabelTextBlockStyle}"/>
                                     <Grid Grid.Column="1" Grid.Row="0">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
@@ -734,7 +734,7 @@
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
                                         <ComboBox AutomationProperties.Name="Trigger" Grid.Column="0" SelectedItem="{Binding Path=Trigger, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=EventTriggerValues}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                        <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Height="22" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Start - Run this action when Move Mouse starts.&#xD;&#xA;&#xD;&#xA;Interval - Run this action at each interval.&#xD;&#xA;&#xD;&#xA;Stop - Run this action when Move Mouse stops&#xD;&#xA;or pauses (does not include blackouts)."/>
+                                        <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Height="22" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Início - Executa esta ação quando o Move Mouse inicia.&#xD;&#xA;&#xD;&#xA;Intervalo - Executa esta ação a cada intervalo.&#xD;&#xA;&#xD;&#xA;Parada - Executa esta ação quando o Move Mouse para&#xD;&#xA;ou pausa (não inclui bloqueios)."/>
                                     </Grid>
                                 </Grid>
                                 <Grid x:Key="RepeatGrid" x:Shared="False">
@@ -762,7 +762,7 @@
                                             </Style.Triggers>
                                         </Style>
                                     </Grid.Style>
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Repeat" Style="{StaticResource LabelTextBlockStyle}"/>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Repetir" Style="{StaticResource LabelTextBlockStyle}"/>
                                     <toggleSwitch:HorizontalToggleSwitch Grid.Column="1" Grid.Row="0" IsChecked="{Binding Path=Repeat, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                     <ComboBox AutomationProperties.Name="Repeat mode" Grid.Column="3" SelectedItem="{Binding Path=RepeatMode, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=IntervalRepeatModeValues}">
                                         <ComboBox.Style>
@@ -797,7 +797,7 @@
                                             </Style>
                                         </xctk:IntegerUpDown.Style>
                                     </xctk:IntegerUpDown>
-                                    <Image Grid.Column="7" Source="/Resources/Help_Dark_64x64.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Height="22" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Forever - Run this action at every interval.&#xD;&#xA;&#xD;&#xA;Throttle - Limits the number of intervals to run this action."/>
+                                    <Image Grid.Column="7" Source="/Resources/Help_Dark_64x64.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Height="22" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Para sempre - Executa esta ação a cada intervalo.&#xD;&#xA;&#xD;&#xA;Limitar - Limita o número de intervalos em que a ação é executada."/>
                                 </Grid>
                                 <Grid x:Key="EnabledGrid" x:Shared="False">
                                     <Grid.ColumnDefinitions>
@@ -808,7 +808,7 @@
                                         <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                         <RowDefinition Height="10"/>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Enabled" Style="{StaticResource LabelTextBlockStyle}"/>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Habilitado" Style="{StaticResource LabelTextBlockStyle}"/>
                                     <toggleSwitch:HorizontalToggleSwitch Grid.Column="1" Grid.Row="0" IsChecked="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
                                 </Grid>
                                 <Grid x:Key="TestButtonGrid" x:Shared="False">
@@ -820,7 +820,7 @@
                                         <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                         <RowDefinition Height="10"/>
                                     </Grid.RowDefinitions>
-                                    <Button AutomationProperties.Name="Test action" Grid.Column="1" Content="Test" Command="{Binding Path=ExecuteCommand, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                                    <Button AutomationProperties.Name="Test action" Grid.Column="1" Content="Testar" Command="{Binding Path=ExecuteCommand, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                 </Grid>
                                 <DataTemplate DataType="{x:Type actions:ActivateApplicationAction}">
                                     <StackPanel Orientation="Vertical">
@@ -834,7 +834,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Mode" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Modo" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <Grid Grid.Column="1" Grid.Row="0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*"/>
@@ -842,7 +842,7 @@
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
                                                 <ComboBox AutomationProperties.Name="Application search mode" Grid.Column="0" SelectedItem="{Binding Path=Mode, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=SearchModeValues}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                                <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Window - Uses the window name to locate the application. This&#xD;&#xA;will give finer control when you have multiple instances of the&#xD;&#xA;same application open.&#xD;&#xA;&#xD;&#xA;Process - Uses the process name to locate the application. A&#xD;&#xA;good option if your application's window name frequently&#xD;&#xA;changes, such as a web browser."/>
+                                                <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Janela - Usa o nome da janela para localizar o aplicativo. Dá&#xD;&#xA;controle mais preciso quando há várias instâncias do&#xD;&#xA;mesmo aplicativo abertas.&#xD;&#xA;&#xD;&#xA;Processo - Usa o nome do processo para localizar o aplicativo.&#xD;&#xA;Boa opção quando o nome da janela muda com frequência,&#xD;&#xA;como em um navegador."/>
                                             </Grid>
                                         </Grid>
                                         <Grid>
@@ -854,7 +854,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Name" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Nome" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <Grid Grid.Column="1" Grid.Row="0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*"/>
@@ -883,21 +883,21 @@
                                                                 <RowDefinition Height="20"/>
                                                                 <RowDefinition/>
                                                             </Grid.RowDefinitions>
-                                                            <TextBlock Grid.Row="0" Text="If the application's window title changes frequently, consider using a wildcard search pattern, for example:" TextWrapping="Wrap"/>
+                                                            <TextBlock Grid.Row="0" Text="Se o título da janela do aplicativo muda com frequência, considere usar um padrão de busca com curinga, por exemplo:" TextWrapping="Wrap"/>
                                                             <Image Grid.Row="2" Source="/Resources/Windows_Title.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality"/>
                                                             <TextBlock Grid.Row="4" TextWrapping="Wrap">
-                                                                <Run Text="This window can be found by using "/>
+                                                                <Run Text="Esta janela pode ser encontrada usando "/>
                                                                 <Run Text="Move Mouse*" Foreground="{StaticResource StandardLightControlSolidColorBrush}"/>
-                                                                <Run Text=" or "/>
+                                                                <Run Text=" ou "/>
                                                                 <Run Text="*Privacy Policy*" Foreground="{StaticResource StandardLightControlSolidColorBrush}"/>
-                                                                <Run Text=" or "/>
+                                                                <Run Text=" ou "/>
                                                                 <Run Text="*Word" Foreground="{StaticResource StandardLightControlSolidColorBrush}"/>
                                                                 <Run Text="."/>
                                                             </TextBlock>
                                                         </Grid>
                                                     </Image.ToolTip>
                                                 </Image>
-                                                <!--<Button AutomationProperties.Name="Refresh applications" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource NoChromeButton}" Command="{Binding Path=RefreshApplicationsCommand}" ToolTip="Refresh applications" Cursor="Hand" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}">
+                                                <!--<Button AutomationProperties.Name="Refresh applications" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource NoChromeButton}" Command="{Binding Path=RefreshApplicationsCommand}" ToolTip="Atualizar aplicativos" Cursor="Hand" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}">
                                                     <Image Name="RefreshImage" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality">
                                                         <Image.RenderTransform>
                                                             <RotateTransform CenterX="{Binding ElementName=RefreshImage, Path=ActualWidth, Converter={StaticResource DoubleDividedByTwoConverter}}" CenterY="{Binding ElementName=RefreshImage, Path=ActualHeight, Converter={StaticResource DoubleDividedByTwoConverter}}"/>
@@ -941,7 +941,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Button" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Botão" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <ComboBox AutomationProperties.Name="Mouse button" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Button, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=MouseButtonValues}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         </Grid>
                                         <Grid>
@@ -953,7 +953,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Hold" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Segurar" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
                                                 <StackPanel.Resources>
                                                     <Style TargetType="TextBlock" BasedOn="{StaticResource LabelTextBlockStyle}">
@@ -971,7 +971,7 @@
                                                     </Style>
                                                 </StackPanel.Resources>
                                                 <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Hold, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                                <TextBlock Text="for"/>
+                                                <TextBlock Text="por"/>
                                                 <xctk:DecimalUpDown Value="{Binding Path=HoldInterval, NotifyOnTargetUpdated=True}" Increment="0.1" Minimum="0.1" Maximum="9999">
                                                     <xctk:DecimalUpDown.Style>
                                                         <Style TargetType="xctk:DecimalUpDown" BasedOn="{StaticResource {x:Type xctk:DecimalUpDown}}">
@@ -984,7 +984,7 @@
                                                         </Style>
                                                     </xctk:DecimalUpDown.Style>
                                                 </xctk:DecimalUpDown>
-                                                <TextBlock Text="seconds"/>
+                                                <TextBlock Text="segundos"/>
                                             </StackPanel>
                                         </Grid>
                                         <ContentPresenter Content="{StaticResource TriggerGrid}"/>
@@ -1004,15 +1004,15 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Path" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Caminho" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <Grid Grid.Column="1" Grid.Row="0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*"/>
                                                     <ColumnDefinition Width="10"/>
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
-                                                <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="0" Text="{Binding Path=FilePath, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Watermark="Path to file"/>
-                                                <Button AutomationProperties.Name="Browse to program" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource NoChromeButton}" ToolTip="Browse to your program" Cursor="Hand" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Click="CommandPathBrowseButton_OnClick">
+                                                <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="0" Text="{Binding Path=FilePath, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Watermark="Caminho do arquivo"/>
+                                                <Button AutomationProperties.Name="Browse to program" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource NoChromeButton}" ToolTip="Procurar seu programa" Cursor="Hand" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Click="CommandPathBrowseButton_OnClick">
                                                     <Image Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality">
                                                         <Image.Style>
                                                             <Style TargetType="Image">
@@ -1038,7 +1038,7 @@
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Column="0" Grid.Row="0" Text="Args" Style="{StaticResource LabelTextBlockStyle}"/>
-                                            <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="1" Grid.Row="0" Text="{Binding Path=Arguments, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Watermark="Command line arguments"/>
+                                            <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="1" Grid.Row="0" Text="{Binding Path=Arguments, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Watermark="Argumentos de linha de comando"/>
                                         </Grid>
                                         <ContentPresenter Content="{StaticResource WaitForReturnGrid}"/>
                                         <ContentPresenter Content="{StaticResource HiddenGrid}"/>
@@ -1061,7 +1061,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Direction" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Direção" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <ComboBox AutomationProperties.Name="Cursor direction" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=CursorDirectionValues}" SelectedItem="{Binding Path=Direction, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         </Grid>
                                         <Grid>
@@ -1073,7 +1073,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Stealth" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Discreto" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <Grid Grid.Column="1" Grid.Row="0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="Auto"/>
@@ -1081,7 +1081,7 @@
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
                                                 <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=Direction, NotifyOnTargetUpdated=True, Mode=TwoWay, Converter={StaticResource CursorDirectionToStealthModeBoolConverter}}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                                <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Mouse cursor movement is not visible."/>
+                                                <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="O movimento do cursor do mouse não é visível."/>
                                             </Grid>
                                         </Grid>
                                         <Grid>
@@ -1093,7 +1093,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Abortable" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Cancelável" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <Grid Grid.Column="1" Grid.Row="0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="Auto"/>
@@ -1101,7 +1101,7 @@
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
                                                 <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=AbortIfUserActivityDetected, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                                <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Abort the action if user activity detected."/>
+                                                <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Cancela a ação se detectar atividade do usuário."/>
                                             </Grid>
                                         </Grid>
                                         <Grid>
@@ -1117,7 +1117,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Speed" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Velocidade" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <ComboBox AutomationProperties.Name="Speed" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Speed, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=CursorSpeedValues}">
                                                 <ComboBox.Style>
                                                     <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
@@ -1149,7 +1149,7 @@
                                                     </Style>
                                                 </xctk:IntegerUpDown.Style>
                                             </xctk:IntegerUpDown>
-                                            <Image Grid.Column="5" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Interval in milliseconds between each pixel shift.&#xD;&#xA;&#xD;&#xA;The higher the interval - the slower the cursor will move."/>
+                                            <Image Grid.Column="5" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Intervalo em milissegundos entre cada deslocamento de pixel.&#xD;&#xA;&#xD;&#xA;Quanto maior o intervalo, mais lento o cursor se move."/>
                                         </Grid>
                                         <ContentPresenter Content="{StaticResource TriggerGrid}"/>
                                         <ContentPresenter Content="{StaticResource RepeatGrid}"/>
@@ -1169,7 +1169,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Position" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Posição" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
                                                 <StackPanel.Resources>
                                                     <Style TargetType="xctk:IntegerUpDown" BasedOn="{StaticResource {x:Type xctk:IntegerUpDown}}">
@@ -1231,8 +1231,8 @@
                                                     <ColumnDefinition Width="10"/>
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
-                                                <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="0" Text="{Binding Path=ScriptPath, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Watermark="Path to .ps1 script"/>
-                                                <Button AutomationProperties.Name="Browse to PowerShell script" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource NoChromeButton}" ToolTip="Browse to your PowerShell script" Cursor="Hand" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Click="ScriptPathBrowseButton_OnClick">
+                                                <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="0" Text="{Binding Path=ScriptPath, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Watermark="Caminho do script .ps1"/>
+                                                <Button AutomationProperties.Name="Browse to PowerShell script" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource NoChromeButton}" ToolTip="Procurar seu script PowerShell" Cursor="Hand" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Click="ScriptPathBrowseButton_OnClick">
                                                     <Image Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality">
                                                         <Image.Style>
                                                             <Style TargetType="Image">
@@ -1268,7 +1268,7 @@
                                                 <RowDefinition Height="150"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Keys" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Teclas" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <Grid Grid.Column="1" Grid.Row="0">
                                                 <Grid.Resources>
                                                     <converters:VirtualKeyToNameConverter x:Key="VirtualKeyToNameConverter"/>
@@ -1410,7 +1410,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Method" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Método" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <ComboBox AutomationProperties.Name="Input method type" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Method, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=InputMethodValues}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         </Grid>
                                         <Grid>
@@ -1432,7 +1432,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Pause" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Pausar" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
                                                 <StackPanel.Resources>
                                                     <Style TargetType="TextBlock" BasedOn="{StaticResource LabelTextBlockStyle}">
@@ -1450,7 +1450,7 @@
                                                     </Style>
                                                 </StackPanel.Resources>
                                                 <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Pause, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                                <TextBlock Text="for"/>
+                                                <TextBlock Text="por"/>
                                                 <xctk:DecimalUpDown Value="{Binding Path=PauseInterval, NotifyOnTargetUpdated=True}" Increment="0.01" Minimum="0.001" Maximum="9999">
                                                     <xctk:DecimalUpDown.Style>
                                                         <Style TargetType="xctk:DecimalUpDown" BasedOn="{StaticResource {x:Type xctk:DecimalUpDown}}">
@@ -1463,7 +1463,7 @@
                                                         </Style>
                                                     </xctk:DecimalUpDown.Style>
                                                 </xctk:DecimalUpDown>
-                                                <TextBlock Text="seconds"/>
+                                                <TextBlock Text="segundos"/>
                                             </StackPanel>
                                         </Grid>
                                         <Grid>
@@ -1485,7 +1485,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Abortable" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Cancelável" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <Grid Grid.Column="1" Grid.Row="0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="Auto"/>
@@ -1493,7 +1493,7 @@
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
                                                 <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=AbortIfUserActivityDetected, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                                <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Abort the action if user activity detected."/>
+                                                <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Cancela a ação se detectar atividade do usuário."/>
                                             </Grid>
                                         </Grid>
                                         <ContentPresenter Content="{StaticResource TriggerGrid}"/>
@@ -1515,7 +1515,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Direction" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Direção" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <ComboBox AutomationProperties.Name="Wheel direction" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=WheelDirectionValues}" SelectedItem="{Binding Path=Direction, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         </Grid>
                                         <ContentPresenter Content="{StaticResource TriggerGrid}"/>
@@ -1537,7 +1537,7 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Random" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Aleatório" Style="{StaticResource LabelTextBlockStyle}"/>
                                             <toggleSwitch:HorizontalToggleSwitch Grid.Column="1" Grid.Row="0" IsChecked="{Binding Path=Random, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                             <TextBlock Grid.Column="0" Grid.Row="2">
                                                 <TextBlock.Style>
@@ -1553,7 +1553,7 @@
                                             </TextBlock>
                                             <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
                                                 <xctk:DecimalUpDown Value="{Binding Path=Seconds, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Increment="0.1" Minimum="0.1" Maximum="9999"/>
-                                                <TextBlock Text="seconds" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Margin="5,0,5,0" Style="{StaticResource LabelTextBlockStyle}"/>
+                                                <TextBlock Text="segundos" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Margin="5,0,5,0" Style="{StaticResource LabelTextBlockStyle}"/>
                                             </StackPanel>
                                         </Grid>
                                         <Grid>
@@ -1575,10 +1575,10 @@
                                                 <RowDefinition Height="{StaticResource LabelColumnHeight}"/>
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Upper" Style="{StaticResource LabelTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Máx." Style="{StaticResource LabelTextBlockStyle}"/>
                                             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
                                                 <xctk:DecimalUpDown Value="{Binding Path=UpperSeconds, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Increment="0.1" Minimum="0.1" Maximum="9999"/>
-                                                <TextBlock Text="seconds" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Margin="5,0,5,0" Style="{StaticResource LabelTextBlockStyle}"/>
+                                                <TextBlock Text="segundos" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}" Margin="5,0,5,0" Style="{StaticResource LabelTextBlockStyle}"/>
                                             </StackPanel>
                                         </Grid>
                                         <ContentPresenter Content="{StaticResource TriggerGrid}"/>
@@ -1592,7 +1592,7 @@
                     <ed:Callout AnchorPoint="-0.171,1.118" CalloutStyle="RoundedRectangle" Fill="{StaticResource StandardWindowBackground}" VerticalAlignment="Center" FontSize="14" Height="58" Margin="72,255,355,0" Stroke="{StaticResource StandardLightTextSolidColorBrush}" StrokeThickness="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                         <ed:Callout.Content>
                             <StackPanel>
-                                <TextBlock Text="Click here to add actions" Foreground="{StaticResource StandardLightTextSolidColorBrush}" Background="Transparent" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="10"/>
+                                <TextBlock Text="Clique aqui para adicionar ações" Foreground="{StaticResource StandardLightTextSolidColorBrush}" Background="Transparent" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="10"/>
                             </StackPanel>
                         </ed:Callout.Content>
                         <ed:Callout.Style>
@@ -1647,7 +1647,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Behaviour" Style="{StaticResource TabHeaderTextBlockStyle}"/>
+                        <TextBlock Text="Comportamento" Style="{StaticResource TabHeaderTextBlockStyle}"/>
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel Orientation="Vertical" Margin="10">
@@ -1655,12 +1655,12 @@
                         <StackPanel.Resources>
                             <converters:BoolToIndexConverter x:Key="BoolToIndexConverter"/>
                         </StackPanel.Resources>
-                        <TextBlock Text="Repeat actions" Style="{StaticResource LabelTextBlockStyle}" Margin="0,0,5,0"/>
+                        <TextBlock Text="Repetir ações" Style="{StaticResource LabelTextBlockStyle}" Margin="0,0,5,0"/>
                         <ComboBox AutomationProperties.Name="Random interval type" SelectedIndex="{Binding Path=Settings.RandomInterval, Converter={StaticResource BoolToIndexConverter}}">
-                            <ComboBoxItem Content="randomly"/>
-                            <ComboBoxItem Content="every"/>
+                            <ComboBoxItem Content="aleatoriamente"/>
+                            <ComboBoxItem Content="a cada"/>
                         </ComboBox>
-                        <TextBlock Text="between" Margin="5,0,0,0">
+                        <TextBlock Text="entre" Margin="5,0,0,0">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock" BasedOn="{StaticResource LabelTextBlockStyle}">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -1673,7 +1673,7 @@
                             </TextBlock.Style>
                         </TextBlock>
                         <xctk:IntegerUpDown Value="{Binding Path=Settings.LowerInterval, NotifyOnTargetUpdated=True}" Increment="1" Minimum="1" Maximum="99999" Margin="5,0,5,0"/>
-                        <TextBlock Text="and">
+                        <TextBlock Text="e">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock" BasedOn="{StaticResource LabelTextBlockStyle}">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -1742,7 +1742,7 @@
                         </StackPanel.Style>
                         <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" Grid.Row="4" IsChecked="{Binding Path=Settings.AutoResume, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Automatically resume after" Style="{StaticResource LabelTextBlockStyle}" Margin="5,0,0,0"/>
+                            <TextBlock Text="Retomar automaticamente após" Style="{StaticResource LabelTextBlockStyle}" Margin="5,0,0,0"/>
                             <xctk:IntegerUpDown Value="{Binding Path=Settings.AutoResumeSeconds, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=Settings.AutoResume, NotifyOnTargetUpdated=True}" Increment="1" Minimum="1" Maximum="99999" Margin="5,0,5,0"/>
                             <TextBlock>
                                 <TextBlock.Style>
@@ -1774,8 +1774,8 @@
                             </Style>
                         </StackPanel.Style>
                         <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.ReactivatePreviousWindow, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                        <TextBlock Margin="5,0,0,0" Text="Refocus previous active window on pause" Style="{StaticResource LabelTextBlockStyle}"/>
-                        <Image Margin="10,0,0,0" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Attempt to refocus the last active window when Move Mouse is paused."/>
+                        <TextBlock Margin="5,0,0,0" Text="Refocar a janela ativa anterior ao pausar" Style="{StaticResource LabelTextBlockStyle}"/>
+                        <Image Margin="10,0,0,0" Source="/Resources/Help_Dark_64x64.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Tenta refocar a última janela ativa quando o Move Mouse é pausado."/>
                     </StackPanel>-->
                     <StackPanel Style="{StaticResource OptionStackPanelStyle}">
                         <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=LaunchAtStartup, NotifyOnTargetUpdated=True, Mode=TwoWay, Converter={StaticResource StartupTaskStateToBoolConverter}}">
@@ -1790,8 +1790,8 @@
                                 </Style>
                             </toggleSwitch:HorizontalToggleSwitch.Style>
                         </toggleSwitch:HorizontalToggleSwitch>
-                        <TextBlock Margin="5,0,0,0" Text="Launch Move Mouse at start-up" Style="{StaticResource LabelTextBlockStyle}"/>
-                        <Image Source="/Resources/Warning_128x128.png" Margin="10,0,0,0" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Move Mouse start-up has been disabled in&#xD;&#xA;Task Manager, and therefore cannot controlled&#xD;&#xA;from here.&#xD;&#xA;&#xD;&#xA;To re-enable Move Mouse to launch at start-up,&#xD;&#xA;open Task Manager, select Move Mouse in the&#xD;&#xA;Start-up tab, and click Enable.">
+                        <TextBlock Margin="5,0,0,0" Text="Iniciar o Move Mouse com o Windows" Style="{StaticResource LabelTextBlockStyle}"/>
+                        <Image Source="/Resources/Warning_128x128.png" Margin="10,0,0,0" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="A inicialização do Move Mouse foi desativada no&#xD;&#xA;Gerenciador de Tarefas e, portanto, não pode ser&#xD;&#xA;controlada por aqui.&#xD;&#xA;&#xD;&#xA;Para reativar a inicialização do Move Mouse,&#xD;&#xA;abra o Gerenciador de Tarefas, selecione o Move Mouse&#xD;&#xA;na aba Inicializar e clique em Habilitar.">
                             <Image.Style>
                                 <Style TargetType="Image">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -1806,7 +1806,7 @@
                     </StackPanel>
                     <StackPanel Style="{StaticResource OptionStackPanelStyle}">
                         <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.StartAtLaunch, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                        <TextBlock Margin="5,0,0,0" Text="Start actions when Move Mouse is launched" Style="{StaticResource LabelTextBlockStyle}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Iniciar ações ao abrir o Move Mouse" Style="{StaticResource LabelTextBlockStyle}"/>
                     </StackPanel>
                     <Grid HorizontalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
@@ -1820,7 +1820,7 @@
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource OptionStackPanelStyle}" HorizontalAlignment="Stretch">
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.AdjustRunningVolume, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Adjust volume when Move Mouse is running" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Ajustar volume quando o Move Mouse estiver em execução" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <Grid Grid.Column="2" Grid.Row="0">
                             <Grid.Style>
@@ -2097,8 +2097,8 @@
                     </Grid>
                     <StackPanel Style="{StaticResource OptionStackPanelStyle}">
                         <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.ActiveWhenLocked, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                        <TextBlock Margin="5,0,0,0" Text="Continue performing actions when session is locked" Style="{StaticResource LabelTextBlockStyle}"/>
-                        <Image Margin="10,0,0,0" Source="/Resources/Warning_128x128.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Allowing actions to continue performing whilst your&#xD;&#xA;session is locked may cause unexpected behaviour.">
+                        <TextBlock Margin="5,0,0,0" Text="Continuar executando ações quando a sessão estiver bloqueada" Style="{StaticResource LabelTextBlockStyle}"/>
+                        <Image Margin="10,0,0,0" Source="/Resources/Warning_128x128.png" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Permitir que as ações continuem enquanto sua&#xD;&#xA;sessão está bloqueada pode causar comportamento inesperado.">
                             <Image.Style>
                                 <Style TargetType="Image">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -2113,11 +2113,11 @@
                     </StackPanel>
                     <StackPanel Style="{StaticResource OptionStackPanelStyle}">
                         <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.PauseOnBattery, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                        <TextBlock Margin="5,0,0,0" Text="Pause when running on battery" Style="{StaticResource LabelTextBlockStyle}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Pausar quando estiver na bateria" Style="{StaticResource LabelTextBlockStyle}"/>
                     </StackPanel>
                     <StackPanel Style="{StaticResource OptionStackPanelStyle}">
                         <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.EnableLogging, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                        <TextBlock Margin="5,0,0,0" Text="Enable logging" Style="{StaticResource LabelTextBlockStyle}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Habilitar registro de log" Style="{StaticResource LabelTextBlockStyle}"/>
                         <Grid Margin="20,0,0,0">
                             <Grid.Style>
                                 <Style TargetType="Grid" >
@@ -2138,20 +2138,20 @@
                                 <ColumnDefinition Width="20"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <!--<xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="0" Grid.Row="0" Text="{Binding Path=Settings.LogPath, NotifyOnTargetUpdated=True}" Watermark="Log file path"/>-->
+                            <!--<xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="0" Grid.Row="0" Text="{Binding Path=Settings.LogPath, NotifyOnTargetUpdated=True}" Watermark="Caminho do arquivo de log"/>-->
                             <ComboBox AutomationProperties.Name="Log level" Grid.Column="0" Width="100" SelectedItem="{Binding Path=Settings.LogLevel, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=LogEventLevels}"/>
-                            <Button AutomationProperties.Name="Open log" Grid.Column="2" Content="Open" Click="OpenLogButton_Click"/>
-                            <Button AutomationProperties.Name="Follow log" Grid.Column="4" Content="Follow" Click="FollowLogButton_Click"/>
+                            <Button AutomationProperties.Name="Open log" Grid.Column="2" Content="Abrir" Click="OpenLogButton_Click"/>
+                            <Button AutomationProperties.Name="Follow log" Grid.Column="4" Content="Acompanhar" Click="FollowLogButton_Click"/>
                         </Grid>
                     </StackPanel>
                     <!--<StackPanel Style="{StaticResource OptionStackPanelStyle}">
                         <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.HookKeyEnabled, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                        <TextBlock Margin="5,0,0,0" Text="Start/Stop Move Mouse using the keyboard" Style="{StaticResource LabelTextBlockStyle}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Iniciar/Parar o Move Mouse pelo teclado" Style="{StaticResource LabelTextBlockStyle}"/>
                     </StackPanel>-->
                     <!--<StackPanel Style="{StaticResource OptionStackPanelStyle}">
                         <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" Grid.Row="8" IsChecked="{Binding Path=Settings.EnableLogging, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
                         <StackPanel Grid.Column="2" Grid.Row="8" Orientation="Horizontal" Margin="5,0,0,0">
-                            <TextBlock Text="Enable activity logs with a maximum buffer of" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Text="Habilitar logs de atividade com buffer máximo de" Style="{StaticResource LabelTextBlockStyle}"/>
                             <xctk:IntegerUpDown Value="{Binding Path=Settings.LoggingBuffer, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=Settings.EnableLogging, NotifyOnTargetUpdated=True}" Increment="1" Minimum="1" Maximum="99999" Margin="5,0,5,0"/>
                         </StackPanel>
                     </StackPanel>-->
@@ -2175,7 +2175,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Appearance" Style="{StaticResource TabHeaderTextBlockStyle}"/>
+                        <TextBlock Text="Aparência" Style="{StaticResource TabHeaderTextBlockStyle}"/>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Margin="10">
@@ -2190,7 +2190,7 @@
                     <StackPanel Grid.Column="0" Orientation="Vertical">
                         <StackPanel Style="{StaticResource OptionStackPanelStyle}">
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.HideMainWindow, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Hide Move Mouse window" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Ocultar janela do Move Mouse" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <StackPanel>
                             <StackPanel.Style>
@@ -2204,7 +2204,7 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.Topmost, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Show topmost" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Manter sempre visível" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <StackPanel>
                             <StackPanel.Style>
@@ -2221,7 +2221,7 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.TopmostWhenRunning, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Show topmost only when running" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Manter sempre visível só em execução" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <StackPanel>
                             <StackPanel.Style>
@@ -2235,7 +2235,7 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.MinimiseOnStop, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Minimise when not running" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Minimizar quando não estiver em execução" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <StackPanel>
                             <StackPanel.Style>
@@ -2249,7 +2249,7 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.HideFromTaskbar, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Hide from taskbar" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Ocultar da barra de tarefas" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <!--todo this should hide overrides for title and icon-->
                         <StackPanel>
@@ -2267,7 +2267,7 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.ShowTaskbarStatus, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Show status on taskbar" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Mostrar status na barra de tarefas" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <StackPanel>
                             <StackPanel.Style>
@@ -2281,7 +2281,7 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.HideFromAltTab, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Hide from Alt+Tab" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Ocultar do Alt+Tab" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <Grid Height="22" Margin="0,0,0,10">
                             <Grid.Style>
@@ -2304,8 +2304,8 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=Settings.OverrideWindowTitle, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Grid.Column="1" Margin="5,0,0,0" Text="Override window title" Style="{StaticResource LabelTextBlockStyle}"/>
-                            <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="3" Text="{Binding Path=Settings.WindowTitle, NotifyOnTargetUpdated=True}" Watermark="Window title" HorizontalAlignment="Stretch">
+                            <TextBlock Grid.Column="1" Margin="5,0,0,0" Text="Substituir título da janela" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="3" Text="{Binding Path=Settings.WindowTitle, NotifyOnTargetUpdated=True}" Watermark="Título da janela" HorizontalAlignment="Stretch">
                                 <xctk:WatermarkTextBox.Style>
                                     <Style TargetType="xctk:WatermarkTextBox" BasedOn="{StaticResource {x:Type xctk:WatermarkTextBox}}">
                                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -2330,13 +2330,13 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.PreventScreenBurn, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Enable screen burn prevention" Style="{StaticResource LabelTextBlockStyle}"/>
-                            <Image Source="/Resources/Help_Dark_64x64.png" Margin="10,0,0,0" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Enabling this option will introduce a subtle movement to&#xD;&#xA;Move Mouse, which although unnoticeable to the eye, will&#xD;&#xA;help prevent screen burn in scenarios where Move Mouse&#xD;&#xA;is on screen for prolonged periods of time."/>
+                            <TextBlock Margin="5,0,0,0" Text="Prevenir queima de tela (burn-in)" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <Image Source="/Resources/Help_Dark_64x64.png" Margin="10,0,0,0" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Ativar esta opção introduz um movimento sutil no&#xD;&#xA;Move Mouse que, embora imperceptível ao olho, ajuda a&#xD;&#xA;prevenir queima de tela quando o Move Mouse fica na&#xD;&#xA;tela por períodos prolongados."/>
                         </StackPanel>
                         <StackPanel Style="{StaticResource OptionStackPanelStyle}">
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.HideSystemTrayIcon, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Hide system tray icon" Style="{StaticResource LabelTextBlockStyle}"/>
-                            <Image Source="/Resources/Warning_128x128.png" Margin="10,0,0,0" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="If you opt to hide both the Move Mouse window and&#xD;&#xA;system tray icon, there will be no way to access the&#xD;&#xA;settings for further customisations.&#xD;&#xA;&#xD;&#xA;The Move Mouse system tray icon will be visible&#xD;&#xA;momentarily at launch, which will allow you to&#xD;&#xA;right-click and access the settings.">
+                            <TextBlock Margin="5,0,0,0" Text="Ocultar ícone da bandeja" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <Image Source="/Resources/Warning_128x128.png" Margin="10,0,0,0" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" RenderOptions.BitmapScalingMode="HighQuality" ToolTip="Se você optar por ocultar a janela do Move Mouse e&#xD;&#xA;o ícone da bandeja, não haverá como acessar as&#xD;&#xA;configurações para novas personalizações.&#xD;&#xA;&#xD;&#xA;O ícone do Move Mouse na bandeja ficará visível&#xD;&#xA;momentaneamente ao iniciar, permitindo que você&#xD;&#xA;clique com o botão direito e acesse as configurações.">
                                 <Image.Style>
                                     <Style TargetType="Image">
                                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -2365,7 +2365,7 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.ShowSystemTrayNotifications, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Show system tray notifications" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Mostrar notificações na bandeja" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <StackPanel>
                             <StackPanel.Style>
@@ -2382,7 +2382,7 @@
                                 <Image Source="/Resources/Twitter_Light_64x64.png"/>
                             </StackPanel.ToolTip>-->
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.ShowMoveMouseStatus, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Show current status on main window" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Mostrar status atual na janela principal" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <StackPanel>
                             <StackPanel.Style>
@@ -2396,7 +2396,7 @@
                                 </Style>
                             </StackPanel.Style>
                             <toggleSwitch:HorizontalToggleSwitch IsChecked="{Binding Path=Settings.DisableButtonAnimation, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Margin="5,0,0,0" Text="Disable button animations" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Margin="5,0,0,0" Text="Desativar animações dos botões" Style="{StaticResource LabelTextBlockStyle}"/>
                         </StackPanel>
                         <!--<Grid Height="22">
                             <Grid.ColumnDefinitions>
@@ -2408,8 +2408,8 @@
                                 <ColumnDefinition Width="22"/>
                             </Grid.ColumnDefinitions>
                             <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=Settings.OverrideIcon, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
-                            <TextBlock Grid.Column="1" Margin="5,0,0,0" Text="Override icon" Style="{StaticResource LabelTextBlockStyle}"/>
-                            <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="3" Text="{Binding Path=Settings.IconPath, NotifyOnTargetUpdated=True}" Watermark="Icon Path" HorizontalAlignment="Stretch">
+                            <TextBlock Grid.Column="1" Margin="5,0,0,0" Text="Substituir ícone" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="3" Text="{Binding Path=Settings.IconPath, NotifyOnTargetUpdated=True}" Watermark="Caminho do ícone" HorizontalAlignment="Stretch">
                                 <xctk:WatermarkTextBox.Style>
                                     <Style TargetType="xctk:WatermarkTextBox" BasedOn="{StaticResource {x:Type xctk:WatermarkTextBox}}">
                                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -2421,7 +2421,7 @@
                                     </Style>
                                 </xctk:WatermarkTextBox.Style>
                             </xctk:WatermarkTextBox>
-                            <Button AutomationProperties.Name="Browse to icon" Grid.Column="5" HorizontalAlignment="Left" Style="{StaticResource NoChromeButton}" ToolTip="Browse to icon" Cursor="Hand" Click="IconPathBrowseButton_OnClick">
+                            <Button AutomationProperties.Name="Browse to icon" Grid.Column="5" HorizontalAlignment="Left" Style="{StaticResource NoChromeButton}" ToolTip="Procurar ícone" Cursor="Hand" Click="IconPathBrowseButton_OnClick">
                                 <Image Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality">
                                     <Image.Style>
                                         <Style TargetType="Image">
@@ -2475,13 +2475,13 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="10"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="1" Grid.Row="1" Text="Action" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="1" Grid.Row="1" Text="Ação" Style="{StaticResource LabelTextBlockStyle}"/>
                             <ComboBox AutomationProperties.Name="Schedule action" Grid.Column="3" Grid.Row="1" SelectedItem="{Binding Path=Action, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=ScheduleActionValues}" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                            <TextBlock Grid.Column="5" Grid.Row="1" Text="Time" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="5" Grid.Row="1" Text="Hora" Style="{StaticResource LabelTextBlockStyle}"/>
                             <xctk:TimeSpanUpDown Grid.Column="7" Grid.Row="1" Value="{Binding Path=Time, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" Minimum="0:0:0" Maximum="23:59:59" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                            <TextBlock Grid.Column="9" Grid.Row="1" Text="Delay (sec)" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="9" Grid.Row="1" Text="Atraso (seg)" Style="{StaticResource LabelTextBlockStyle}"/>
                             <xctk:IntegerUpDown Grid.Column="11" Grid.Row="1" Value="{Binding Path=Delay, NotifyOnTargetUpdated=True}" Increment="1" Minimum="0" Maximum="99999" Width="45" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                            <TextBlock Grid.Column="13" Grid.Row="1" Text="Enabled" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="13" Grid.Row="1" Text="Habilitado" Style="{StaticResource LabelTextBlockStyle}"/>
                             <toggleSwitch:HorizontalToggleSwitch Grid.Column="15" Grid.Row="1" IsChecked="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
                             <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="15">
                                 <Grid.Resources>
@@ -2508,13 +2508,13 @@
                                     <ColumnDefinition Width="10"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=Monday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Mon" CheckedContent="Mon"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="2" IsChecked="{Binding Path=Tuesday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Tue" CheckedContent="Tue"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="4" IsChecked="{Binding Path=Wednesday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Wed" CheckedContent="Wed"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="6" IsChecked="{Binding Path=Thursday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Thu" CheckedContent="Thu"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="8" IsChecked="{Binding Path=Friday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Fri" CheckedContent="Fri"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="10" IsChecked="{Binding Path=Saturday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Sat" CheckedContent="Sat"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="12" IsChecked="{Binding Path=Sunday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Sun" CheckedContent="Sun"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=Monday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Seg" CheckedContent="Seg"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="2" IsChecked="{Binding Path=Tuesday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Ter" CheckedContent="Ter"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="4" IsChecked="{Binding Path=Wednesday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Qua" CheckedContent="Qua"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="6" IsChecked="{Binding Path=Thursday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Qui" CheckedContent="Qui"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="8" IsChecked="{Binding Path=Friday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Sex" CheckedContent="Sex"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="10" IsChecked="{Binding Path=Saturday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Sáb" CheckedContent="Sáb"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="12" IsChecked="{Binding Path=Sunday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Dom" CheckedContent="Dom"/>
                             </Grid>
                             <Button AutomationProperties.Name="Remove schedule" Grid.Column="17" Grid.Row="1" Grid.RowSpan="3" Style="{StaticResource TaskActionButtonStyle}" Command="{Binding ElementName=ScheduleItemsControl, Path=DataContext.RemoveSelectedScheduleCommand, NotifyOnTargetUpdated=True}" CommandParameter="{Binding Path=Id}" Margin="0">
                                 <Image>
@@ -2559,10 +2559,10 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="10"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="1" Grid.Row="1" Text="Action" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="1" Grid.Row="1" Text="Ação" Style="{StaticResource LabelTextBlockStyle}"/>
                             <ComboBox AutomationProperties.Name="Schedule action" Grid.Column="3" Grid.Row="1" SelectedItem="{Binding Path=Action, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=ScheduleActionValues}" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                            <TextBlock Grid.Column="5" Grid.Row="1" Text="Schedule" Style="{StaticResource LabelTextBlockStyle}"/>
-                            <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="7" Grid.Row="1" Text="{Binding Path=Schedule, NotifyOnTargetUpdated=True}" Watermark="Cron Expression" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}">
+                            <TextBlock Grid.Column="5" Grid.Row="1" Text="Agendamento" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="7" Grid.Row="1" Text="{Binding Path=Schedule, NotifyOnTargetUpdated=True}" Watermark="Expressão Cron" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}">
                                 <xctk:WatermarkTextBox.Style>
                                     <Style TargetType="xctk:WatermarkTextBox" BasedOn="{StaticResource {x:Type xctk:WatermarkTextBox}}">
                                         <Style.Triggers>
@@ -2593,7 +2593,7 @@
                                     </Image.Style>
                                 </Image>
                             </Button>
-                            <TextBlock Grid.Column="11" Grid.Row="1" Text="Enabled" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="11" Grid.Row="1" Text="Habilitado" Style="{StaticResource LabelTextBlockStyle}"/>
                             <toggleSwitch:HorizontalToggleSwitch Grid.Column="13" Grid.Row="1" IsChecked="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
                             <Button AutomationProperties.Name="Remove schedule" Grid.Column="15" Grid.Row="1" Style="{StaticResource TaskActionButtonStyle}" Command="{Binding ElementName=ScheduleItemsControl, Path=DataContext.RemoveSelectedScheduleCommand, NotifyOnTargetUpdated=True}" CommandParameter="{Binding Path=Id}" Margin="0">
                                 <Image>
@@ -2630,7 +2630,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Schedules" Style="{StaticResource TabHeaderTextBlockStyle}"/>
+                        <TextBlock Text="Agendamentos" Style="{StaticResource TabHeaderTextBlockStyle}"/>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Margin="10">
@@ -2666,12 +2666,12 @@
                             </Button.Style>
                             <Button.ContextMenu>
                                 <ContextMenu StaysOpen="True" Style="{StaticResource ContextMenuStyle}">
-                                    <MenuItem Header="Simple Schedule" Click="AddSimpleSchedule_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                    <MenuItem Header="Agendamento Simples" Click="AddSimpleSchedule_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                         <MenuItem.Icon>
                                             <Image Source="/Resources/Schedules_Light_64x64.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                         </MenuItem.Icon>
                                     </MenuItem>
-                                    <MenuItem Header="Advanced Schedule" Click="AddAdvancedSchedule_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
+                                    <MenuItem Header="Agendamento Avançado" Click="AddAdvancedSchedule_OnClick" Style="{StaticResource TaskActionButtonMenuItemStyle}">
                                         <MenuItem.Icon>
                                             <Image Source="/Resources/Schedules_Light_64x64.png" Style="{StaticResource TaskActionButtonMenuImageStyle}"/>
                                         </MenuItem.Icon>
@@ -2726,13 +2726,13 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="10"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="1" Grid.Row="1" Text="Time" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="1" Grid.Row="1" Text="Hora" Style="{StaticResource LabelTextBlockStyle}"/>
                             <xctk:TimeSpanUpDown Grid.Column="3" Grid.Row="1" Value="{Binding Path=Time, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" Minimum="0:0:0" Maximum="23:59:59" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                            <TextBlock Grid.Column="5" Grid.Row="1" Text="Duration" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="5" Grid.Row="1" Text="Duração" Style="{StaticResource LabelTextBlockStyle}"/>
                             <xctk:TimeSpanUpDown Grid.Column="7" Grid.Row="1" Value="{Binding Path=Duration, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" Minimum="0:0:1" Maximum="23:59:59" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                            <TextBlock Grid.Column="9" Grid.Row="1" Text="Delay (sec)" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="9" Grid.Row="1" Text="Atraso (seg)" Style="{StaticResource LabelTextBlockStyle}"/>
                             <xctk:IntegerUpDown Grid.Column="11" Grid.Row="1" Value="{Binding Path=Delay, NotifyOnTargetUpdated=True}" Increment="1" Minimum="0" Maximum="99999" Width="45" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                            <TextBlock Grid.Column="13" Grid.Row="1" Text="Enabled" Style="{StaticResource LabelTextBlockStyle}"/>
+                            <TextBlock Grid.Column="13" Grid.Row="1" Text="Habilitado" Style="{StaticResource LabelTextBlockStyle}"/>
                             <toggleSwitch:HorizontalToggleSwitch Grid.Column="15" Grid.Row="1" IsChecked="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True, Mode=TwoWay}"/>
                             <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="15">
                                 <Grid.Resources>
@@ -2759,13 +2759,13 @@
                                     <ColumnDefinition Width="10"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=Monday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Mon" CheckedContent="Mon"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="2" IsChecked="{Binding Path=Tuesday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Tue" CheckedContent="Tue"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="4" IsChecked="{Binding Path=Wednesday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Wed" CheckedContent="Wed"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="6" IsChecked="{Binding Path=Thursday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Thu" CheckedContent="Thu"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="8" IsChecked="{Binding Path=Friday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Fri" CheckedContent="Fri"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="10" IsChecked="{Binding Path=Saturday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Sat" CheckedContent="Sat"/>
-                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="12" IsChecked="{Binding Path=Sunday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Sun" CheckedContent="Sun"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="0" IsChecked="{Binding Path=Monday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Seg" CheckedContent="Seg"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="2" IsChecked="{Binding Path=Tuesday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Ter" CheckedContent="Ter"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="4" IsChecked="{Binding Path=Wednesday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Qua" CheckedContent="Qua"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="6" IsChecked="{Binding Path=Thursday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Qui" CheckedContent="Qui"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="8" IsChecked="{Binding Path=Friday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Sex" CheckedContent="Sex"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="10" IsChecked="{Binding Path=Saturday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Sáb" CheckedContent="Sáb"/>
+                                <toggleSwitch:HorizontalToggleSwitch Grid.Column="12" IsChecked="{Binding Path=Sunday, NotifyOnTargetUpdated=True, Mode=TwoWay}" UncheckedContent="Dom" CheckedContent="Dom"/>
                             </Grid>
                             <Button AutomationProperties.Name="Remove blackout" Grid.Column="17" Grid.Row="1" Grid.RowSpan="3" Style="{StaticResource TaskActionButtonStyle}" Command="{Binding ElementName=ScheduleItemsControl, Path=DataContext.RemoveSelectedBlackoutCommand, NotifyOnTargetUpdated=True}" CommandParameter="{Binding Path=Id}" Margin="0">
                                 <Image>
@@ -2802,7 +2802,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Blackouts" Style="{StaticResource TabHeaderTextBlockStyle}"/>
+                        <TextBlock Text="Bloqueios" Style="{StaticResource TabHeaderTextBlockStyle}"/>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Margin="10">
@@ -2853,7 +2853,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="About" Style="{StaticResource TabHeaderTextBlockStyle}"/>
+                        <TextBlock Text="Sobre" Style="{StaticResource TabHeaderTextBlockStyle}"/>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Margin="10">
@@ -2898,20 +2898,17 @@
                         <TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding Path=HomePage, Mode=OneWay}" Style="{StaticResource HyperLinkTextBlockStyle}" MouseDown="HomeLink_OnMouseDown"/>
                         <Image Grid.Row="6" Grid.Column="0" Source="/Resources/Mail_Dark_64x64.png"/>
                         <TextBlock Grid.Row="6" Grid.Column="2" Text="{Binding Path=MailAddress, Mode=OneWay}" Style="{StaticResource HyperLinkTextBlockStyle}" MouseDown="ContactLink_OnMouseDown"/>
-                        <Image Grid.Row="8" Grid.Column="0" Source="/Resources/PayPal_Dark_64x64.png"/>
-                        <TextBlock Grid.Row="8" Grid.Column="2" Text="https://www.paypal.com" Style="{StaticResource HyperLinkTextBlockStyle}" MouseDown="PayPalLink_OnMouseDown"/>
-                        <Image Grid.Row="10" Grid.Column="0" Source="/Resources/Twitter_Dark_64x64.png"/>
-                        <TextBlock Grid.Row="10" Grid.Column="2" Text="{Binding Path=TwitterUrl, Mode=OneWay}" Style="{StaticResource HyperLinkTextBlockStyle}" MouseDown="TwitterLink_OnMouseDown"/>
-                        <Image Grid.Row="12" Grid.Column="0" Source="/Resources/GitHub_Dark_64x64.png"/>
-                        <TextBlock Grid.Row="12" Grid.Column="2" Text="{Binding Path=GitHubUrl, Mode=OneWay}" Style="{StaticResource HyperLinkTextBlockStyle}" MouseDown="GitHubLink_OnMouseDown"/>
-                        <Image Grid.Row="14" Grid.Column="0" Source="/Resources/Timer_Dark_64x64.png"/>
-                        <TextBlock Grid.Row="14" Grid.Column="2" Text="{Binding Path=SystemIdleTime, Mode=OneWay, NotifyOnTargetUpdated=True, StringFormat='System Idle Time - {0:hh}h {0:mm}m {0:ss}s {0:fff}ms'}"/>
+                        <!-- Build personalizado: links de doacao (PayPal) e Twitter do autor original removidos. -->
+                        <Image Grid.Row="8" Grid.Column="0" Source="/Resources/GitHub_Dark_64x64.png"/>
+                        <TextBlock Grid.Row="8" Grid.Column="2" Text="{Binding Path=GitHubUrl, Mode=OneWay}" Style="{StaticResource HyperLinkTextBlockStyle}" MouseDown="GitHubLink_OnMouseDown"/>
+                        <Image Grid.Row="10" Grid.Column="0" Source="/Resources/Timer_Dark_64x64.png"/>
+                        <TextBlock Grid.Row="10" Grid.Column="2" Text="{Binding Path=SystemIdleTime, Mode=OneWay, NotifyOnTargetUpdated=True, StringFormat='Tempo ocioso do sistema - {0:hh}h {0:mm}m {0:ss}s {0:fff}ms'}"/>
                     </Grid>
                     <Image Source="/Resources/Mouse.ico" HorizontalAlignment="Right" VerticalAlignment="Top" Width="96" Height="96"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button AutomationProperties.Name="Close settings" Content="Close" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,20" Click="CloseButton_OnClick"/>
+        <Button AutomationProperties.Name="Close settings" Content="Fechar" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,20" Click="CloseButton_OnClick"/>
         <Border BorderThickness="5" BorderBrush="{StaticResource StandardBorderBrush}"/>
     </Grid>
 </Window>

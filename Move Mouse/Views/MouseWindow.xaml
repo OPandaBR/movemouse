@@ -12,6 +12,7 @@
     <Window.Resources>
         <converters:ProgressToAngleConverter x:Key="ProgressConverter"/>
         <converters:MouseStateIsSleepingConverter x:Key="MouseStateIsSleepingConverter"/>
+        <converters:MouseStateToDisplayConverter x:Key="MouseStateToDisplayConverter"/>
         <converters:StringToFileExistsConverter x:Key="StringToFileExistsConverter"/>
         <Style TargetType="Image" x:Key="StandardImageStyle">
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
@@ -299,7 +300,7 @@
     <Grid>
         <Grid Width="200" Height="200" MouseEnter="MouseGrid_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave">
             <!--IconSource="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Icon}"-->
-            <tb:TaskbarIcon Name="MouseTaskbarIcon" PopupActivation="RightClick" DoubleClickCommand="{Binding Path=StartStopToggleCommand, NotifyOnTargetUpdated=True}" LeftClickCommand="{Binding Path=ShowMoveMouseCommand}" ToolTipText="{Binding Path=CurrentState, NotifyOnTargetUpdated=True}">
+            <tb:TaskbarIcon Name="MouseTaskbarIcon" PopupActivation="RightClick" DoubleClickCommand="{Binding Path=StartStopToggleCommand, NotifyOnTargetUpdated=True}" LeftClickCommand="{Binding Path=ShowMoveMouseCommand}" ToolTipText="{Binding Path=CurrentState, NotifyOnTargetUpdated=True, Converter={StaticResource MouseStateToDisplayConverter}}">
                 <tb:TaskbarIcon.Style>
                     <Style TargetType="tb:TaskbarIcon">
                         <Setter Property="Visibility" Value="Visible"/>
@@ -371,34 +372,7 @@
                                     </Image.Style>
                                 </Image>
                             </Button>
-                            <Button AutomationProperties.Name="Pay Pal" Click="PayPalButton_OnClick">
-                                <Image>
-                                    <Image.Style>
-                                        <Style TargetType="Image" BasedOn="{StaticResource StandardImageStyle}">
-                                            <Setter Property="Source" Value="/Resources/PayPal_Dark_64x64.png"/>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Source" Value="/Resources/PayPal_Light_64x64.png"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Image.Style>
-                                </Image>
-                            </Button>
-                            <Button AutomationProperties.Name="Twitter" Click="TwitterButton_OnClick">
-                                <Image>
-                                    <Image.Style>
-                                        <Style TargetType="Image" BasedOn="{StaticResource StandardImageStyle}">
-                                            <Setter Property="Source" Value="/Resources/Twitter_Dark_64x64.png"/>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Source" Value="/Resources/Twitter_Light_64x64.png"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Image.Style>
-                                </Image>
-                            </Button>
+                            <!-- Build personalizado: botoes de doacao (PayPal) e Twitter removidos do menu da bandeja. -->
                             <Button AutomationProperties.Name="Home" Click="HomeButton_OnClick">
                                 <Image>
                                     <Image.Style>
@@ -475,7 +449,7 @@
                 <!--<Image Source="{Binding Path=ThemeImage, NotifyOnTargetUpdated=True}" Margin="-35"/>-->
                 <Button AutomationProperties.Name="Toggle start stop" Command="{Binding Path=StartStopToggleCommand, NotifyOnTargetUpdated=True}" Style="{StaticResource NoChromeButton}" Cursor="Hand" PreviewMouseDown="MouseButton_OnPreviewMouseDown" FocusVisualStyle="{x:Null}"/>
             </Grid>
-            <TextBlock Text="{Binding Path=CurrentState, NotifyOnTargetUpdated=True}" Foreground="{StaticResource StandardLightTextSolidColorBrush}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+            <TextBlock Text="{Binding Path=CurrentState, NotifyOnTargetUpdated=True, Converter={StaticResource MouseStateToDisplayConverter}}" Foreground="{StaticResource StandardLightTextSolidColorBrush}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock">
                         <Setter Property="Visibility" Value="Visible"/>
@@ -488,20 +462,7 @@
                 </TextBlock.Style>
             </TextBlock>
         </Grid>
-        <Button AutomationProperties.Name="Twitter" Name="FlyingTwitterButton" Style="{StaticResource FlyingButtonStyle}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Click="TwitterButton_OnClick">
-            <Image Name="FlyingTwitterImage">
-                <Image.Style>
-                    <Style TargetType="Image" BasedOn="{StaticResource FlyingImageStyle}">
-                        <Setter Property="Source" Value="/Resources/Twitter_Dark_64x64.png"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Source" Value="/Resources/Twitter_Light_64x64.png"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Image.Style>
-            </Image>
-        </Button>
+        <!-- Build personalizado: botao Twitter removido do menu radial. -->
         <Button AutomationProperties.Name="Settings" Name="FlyingSettingsButton" Style="{StaticResource FlyingButtonStyle}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Click="SettingsButton_OnClick">
             <Image Name="FlyingSettingsImage">
                 <Image.Style>
@@ -544,7 +505,8 @@
                 </Image.Style>
             </Image>
         </Button>
-        <Button AutomationProperties.Name="Pay Pal" Name="FlyingPayPalButton" Style="{StaticResource FlyingButtonStyle}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Click="PayPalButton_OnClick">
+        <!-- Build personalizado: botao de doacao (PayPal) removido do menu radial. -->
+        <!--<Button AutomationProperties.Name="Pay Pal" Name="FlyingPayPalButton" Style="{StaticResource FlyingButtonStyle}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Click="PayPalButton_OnClick">
             <Image Name="FlyingPayPalImage">
                 <Image.Style>
                     <Style TargetType="Image" BasedOn="{StaticResource FlyingImageStyle}">
@@ -557,7 +519,7 @@
                     </Style>
                 </Image.Style>
             </Image>
-        </Button>
+        </Button>-->
         <!--<Button AutomationProperties.Name="Contact" Name="FlyingContactButton" Style="{StaticResource FlyingButtonStyle}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Click="ContactButton_OnClick">
             <Image Name="FlyingContactImage">
                 <Image.Style>
@@ -603,7 +565,7 @@
         <ed:Callout AnchorPoint="-0.171,1.118" CalloutStyle="RoundedRectangle" Fill="{StaticResource StandardWindowBackground}" VerticalAlignment="Bottom" FontSize="14" Height="58" Margin="334,0,95,311" Stroke="{StaticResource StandardLightTextSolidColorBrush}" StrokeThickness="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" MouseDown="UpdateCallout_OnMouseDown">
             <ed:Callout.Content>
                 <StackPanel>
-                    <TextBlock Text="Click here to download a new version of me" Foreground="{StaticResource StandardLightTextSolidColorBrush}" Background="Transparent" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="10"/>
+                    <TextBlock Text="Clique aqui para baixar uma nova versão" Foreground="{StaticResource StandardLightTextSolidColorBrush}" Background="Transparent" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="10"/>
                 </StackPanel>
             </ed:Callout.Content>
             <ed:Callout.Style>
@@ -636,7 +598,7 @@
         <ed:Callout AnchorPoint="-0.171,1.118" CalloutStyle="RoundedRectangle" Fill="{StaticResource StandardWindowBackground}" VerticalAlignment="Bottom" FontSize="14" Height="58" Margin="334,0,120,311" Stroke="{StaticResource StandardLightTextSolidColorBrush}" StrokeThickness="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <ed:Callout.Content>
                 <StackPanel>
-                    <TextBlock Text="Click here to start Move Mouse" Foreground="{StaticResource StandardLightTextSolidColorBrush}" Background="Transparent" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="10"/>
+                    <TextBlock Text="Clique aqui para iniciar o Move Mouse" Foreground="{StaticResource StandardLightTextSolidColorBrush}" Background="Transparent" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="10"/>
                 </StackPanel>
             </ed:Callout.Content>
             <ed:Callout.Style>
