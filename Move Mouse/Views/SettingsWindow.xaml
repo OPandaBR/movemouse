@@ -18,6 +18,11 @@
             <converters:DoubleDividedByTwoConverter x:Key="DoubleDividedByTwoConverter"/>
             <converters:StartupTaskStateToBoolConverter x:Key="StartupTaskStateToBoolConverter"/>
             <converters:CursorDirectionToStealthModeBoolConverter x:Key="CursorDirectionToStealthModeBoolConverter"/>
+            <!-- Build personalizado: traduz os valores dos dropdowns (enums) para portugues. -->
+            <converters:EnumToDisplayConverter x:Key="EnumToDisplayConverter"/>
+            <DataTemplate x:Key="EnumPtItemTemplate">
+                <TextBlock Text="{Binding Converter={StaticResource EnumToDisplayConverter}}"/>
+            </DataTemplate>
         </Grid.Resources>
         <TabControl Background="Transparent" Margin="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabStripPlacement="Right" BorderBrush="{StaticResource StandardBorderBrush}" BorderThickness="3">
             <TabControl.Resources>
@@ -733,7 +738,7 @@
                                             <ColumnDefinition Width="10"/>
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
-                                        <ComboBox AutomationProperties.Name="Trigger" Grid.Column="0" SelectedItem="{Binding Path=Trigger, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=EventTriggerValues}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                                        <ComboBox AutomationProperties.Name="Trigger" Grid.Column="0" SelectedItem="{Binding Path=Trigger, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=EventTriggerValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Height="22" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Início - Executa esta ação quando o Move Mouse inicia.&#xD;&#xA;&#xD;&#xA;Intervalo - Executa esta ação a cada intervalo.&#xD;&#xA;&#xD;&#xA;Parada - Executa esta ação quando o Move Mouse para&#xD;&#xA;ou pausa (não inclui bloqueios)."/>
                                     </Grid>
                                 </Grid>
@@ -764,7 +769,7 @@
                                     </Grid.Style>
                                     <TextBlock Grid.Column="0" Grid.Row="0" Text="Repetir" Style="{StaticResource LabelTextBlockStyle}"/>
                                     <toggleSwitch:HorizontalToggleSwitch Grid.Column="1" Grid.Row="0" IsChecked="{Binding Path=Repeat, NotifyOnTargetUpdated=True, Mode=TwoWay}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
-                                    <ComboBox AutomationProperties.Name="Repeat mode" Grid.Column="3" SelectedItem="{Binding Path=RepeatMode, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=IntervalRepeatModeValues}">
+                                    <ComboBox AutomationProperties.Name="Repeat mode" Grid.Column="3" SelectedItem="{Binding Path=RepeatMode, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=IntervalRepeatModeValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}">
                                         <ComboBox.Style>
                                             <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
                                                 <Setter Property="IsEnabled" Value="False"/>
@@ -841,7 +846,7 @@
                                                     <ColumnDefinition Width="10"/>
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
-                                                <ComboBox AutomationProperties.Name="Application search mode" Grid.Column="0" SelectedItem="{Binding Path=Mode, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=SearchModeValues}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                                                <ComboBox AutomationProperties.Name="Application search mode" Grid.Column="0" SelectedItem="{Binding Path=Mode, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=SearchModeValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                                 <Image Grid.Column="2" Source="/Resources/Help_Dark_64x64.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}" ToolTip="Janela - Usa o nome da janela para localizar o aplicativo. Dá&#xD;&#xA;controle mais preciso quando há várias instâncias do&#xD;&#xA;mesmo aplicativo abertas.&#xD;&#xA;&#xD;&#xA;Processo - Usa o nome do processo para localizar o aplicativo.&#xD;&#xA;Boa opção quando o nome da janela muda com frequência,&#xD;&#xA;como em um navegador."/>
                                             </Grid>
                                         </Grid>
@@ -942,7 +947,7 @@
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Column="0" Grid.Row="0" Text="Botão" Style="{StaticResource LabelTextBlockStyle}"/>
-                                            <ComboBox AutomationProperties.Name="Mouse button" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Button, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=MouseButtonValues}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                                            <ComboBox AutomationProperties.Name="Mouse button" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Button, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=MouseButtonValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         </Grid>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
@@ -1062,7 +1067,7 @@
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Column="0" Grid.Row="0" Text="Direção" Style="{StaticResource LabelTextBlockStyle}"/>
-                                            <ComboBox AutomationProperties.Name="Cursor direction" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=CursorDirectionValues}" SelectedItem="{Binding Path=Direction, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                                            <ComboBox AutomationProperties.Name="Cursor direction" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=CursorDirectionValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}" SelectedItem="{Binding Path=Direction, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         </Grid>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
@@ -1118,7 +1123,7 @@
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Column="0" Grid.Row="0" Text="Velocidade" Style="{StaticResource LabelTextBlockStyle}"/>
-                                            <ComboBox AutomationProperties.Name="Speed" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Speed, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=CursorSpeedValues}">
+                                            <ComboBox AutomationProperties.Name="Speed" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Speed, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=CursorSpeedValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}">
                                                 <ComboBox.Style>
                                                     <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
                                                         <Setter Property="IsEnabled" Value="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
@@ -1411,7 +1416,7 @@
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Column="0" Grid.Row="0" Text="Método" Style="{StaticResource LabelTextBlockStyle}"/>
-                                            <ComboBox AutomationProperties.Name="Input method type" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Method, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=InputMethodValues}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                                            <ComboBox AutomationProperties.Name="Input method type" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=Method, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=InputMethodValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         </Grid>
                                         <Grid>
                                             <Grid.Style>
@@ -1516,7 +1521,7 @@
                                                 <RowDefinition Height="10"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Column="0" Grid.Row="0" Text="Direção" Style="{StaticResource LabelTextBlockStyle}"/>
-                                            <ComboBox AutomationProperties.Name="Wheel direction" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=WheelDirectionValues}" SelectedItem="{Binding Path=Direction, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                                            <ComboBox AutomationProperties.Name="Wheel direction" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=WheelDirectionValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}" SelectedItem="{Binding Path=Direction, NotifyOnTargetUpdated=True}" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                                         </Grid>
                                         <ContentPresenter Content="{StaticResource TriggerGrid}"/>
                                         <ContentPresenter Content="{StaticResource RepeatGrid}"/>
@@ -2476,7 +2481,7 @@
                                 <RowDefinition Height="10"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Column="1" Grid.Row="1" Text="Ação" Style="{StaticResource LabelTextBlockStyle}"/>
-                            <ComboBox AutomationProperties.Name="Schedule action" Grid.Column="3" Grid.Row="1" SelectedItem="{Binding Path=Action, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=ScheduleActionValues}" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                            <ComboBox AutomationProperties.Name="Schedule action" Grid.Column="3" Grid.Row="1" SelectedItem="{Binding Path=Action, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=ScheduleActionValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                             <TextBlock Grid.Column="5" Grid.Row="1" Text="Hora" Style="{StaticResource LabelTextBlockStyle}"/>
                             <xctk:TimeSpanUpDown Grid.Column="7" Grid.Row="1" Value="{Binding Path=Time, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" Minimum="0:0:0" Maximum="23:59:59" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                             <TextBlock Grid.Column="9" Grid.Row="1" Text="Atraso (seg)" Style="{StaticResource LabelTextBlockStyle}"/>
@@ -2560,7 +2565,7 @@
                                 <RowDefinition Height="10"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Column="1" Grid.Row="1" Text="Ação" Style="{StaticResource LabelTextBlockStyle}"/>
-                            <ComboBox AutomationProperties.Name="Schedule action" Grid.Column="3" Grid.Row="1" SelectedItem="{Binding Path=Action, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=ScheduleActionValues}" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
+                            <ComboBox AutomationProperties.Name="Schedule action" Grid.Column="3" Grid.Row="1" SelectedItem="{Binding Path=Action, NotifyOnTargetUpdated=True}" ItemsSource="{Binding Path=ScheduleActionValues}" ItemTemplate="{StaticResource EnumPtItemTemplate}" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}"/>
                             <TextBlock Grid.Column="5" Grid.Row="1" Text="Agendamento" Style="{StaticResource LabelTextBlockStyle}"/>
                             <xctk:WatermarkTextBox AutomationProperties.Name="{Binding Path=Watermark, RelativeSource={RelativeSource Self}}" Grid.Column="7" Grid.Row="1" Text="{Binding Path=Schedule, NotifyOnTargetUpdated=True}" Watermark="Expressão Cron" IsEnabled="{Binding Path=IsEnabled, NotifyOnTargetUpdated=True}">
                                 <xctk:WatermarkTextBox.Style>
